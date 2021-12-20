@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="EchoMe">
+  <displayname default="cat_Echo-In-EchoMe">
+    <label description="cat_Echo-In-EchoMe" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>cat_Echo-In-EchoMe</name>
+  <type>10</type>
+</customapirequestparameter>
