@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <PowerAppsTargetsPath>$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\PowerApps</PowerAppsTargetsPath>  
   </PropertyGroup>
   
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
-  <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props')"/>
+  <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props')" />
 
   <PropertyGroup>
     <ProjectGuid>3a18f277-5961-4c06-a1b2-8f33691ce88d</ProjectGuid>
@@ -23,17 +23,17 @@
  
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*"/>
+    <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
   
   <ItemGroup>
-    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\.gitignore"/>
-    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\bin\**"/>
-    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\obj\**"/>
-    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.cdsproj"/>
-    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.cdsproj.user"/>
-    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.sln"/>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\.gitignore" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\bin\**" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\obj\**" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.cdsproj" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.cdsproj.user" />
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.sln" />
   </ItemGroup>
   
   <ItemGroup>
@@ -42,8 +42,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="plugins\CodeFirstFusionExample.Plugins\CodeFirstFusionExample.Plugins.csproj" />
+  </ItemGroup>  
+
+  <!-- Manually added to ensure plugin dll gets copied before solution pack -->
+  <Target Name="CopyPluginAssemblies" AfterTargets="ResolveReferences">
+    <Message Text="Copying plugin assemblies..." Importance="high"/>
+    <Copy
+      SourceFiles="plugins\CodeFirstFusionExample.Plugins\bin\$(Configuration)\$(TargetFramework)\CodeFirstFusionExample.Plugins.dll"
+      DestinationFiles="unpacked-solution\PluginAssemblies\CodeFirstFusionExamplePlugins-9732BB82-293C-440C-ADE7-306240D9AAD5\CodeFirstFusionExamplePlugins.dll" />
+      <!-- Note that Dataverse doesn't support dll names with '.' in them.  Therefore, destination dll has the '.'' removed -->
+  </Target>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
-  <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets')"/>
+  <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.targets')" />
 
 </Project>

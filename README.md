@@ -39,7 +39,7 @@ edit CodeFirstFusionExample.cdsproj: enable SolutionPackageType to Both
 
 **pac solution import** of the unmanaged zip file in the bin/debug folder
 
-create folders: src/solutions/plugins/CodeFirstFusionExample.Plugins
+create folders: src/solutions/CodeFirstFusionExample/plugins/CodeFirstFusionExample.Plugins
 
 **pac plugin init**
 
@@ -49,7 +49,7 @@ author plugin in VSCode
 
 deploy plugin with plugin registration tool
 
-add plugin assembly to unmanaged solution in make.powerapps.com
+add plugin assembly to deployed unmanaged solution in make.powerapps.com
 
 in powershell set:
 ```
@@ -60,6 +60,25 @@ Export/Unpack metadata from changes made in make.powerapps.com
 ```
 . .\export-unpack.ps1
 ```
+
+In CodeFirstFusionExample solution folder run: **pac solution add-reference -p plugins\CodeFirstFusionExample.Plugins**
+
+At this point, the dll does not get copied from within the plugins\CodeFirstFusionExample.Plugins folder to the unpacked-solution/PluginAssemblies folder structure of the unpacked solution.  You can validate this by deleting the dll.  If you do, **dotnet build** will fail. To address this, edit the **CodeFirstFusionExample.cdsproj** file, adding this under the **ItemGroup** with the **ProjectReference** to the **plugin csproj**.
+```
+<!-- Manually added to ensure plugin dll gets copied before solution pack -->
+  <Target Name="CopyPluginAssemblies" AfterTargets="ResolveReferences">
+    <Message Text="Copying plugin assemblies..." Importance="high"/>
+    <Copy
+      SourceFiles="plugins\CodeFirstFusionExample.Plugins\bin\$(Configuration)\$(TargetFramework)\CodeFirstFusionExample.Plugins.dll"
+      DestinationFiles="unpacked-solution\PluginAssemblies\CodeFirstFusionExamplePlugins-9732BB82-293C-440C-ADE7-306240D9AAD5\CodeFirstFusionExamplePlugins.dll" />
+      <!-- Note that Dataverse doesn't support dll names with '.' in them.  Therefore, destination dll has the '.'' removed -->
+  </Target>
+```
+NOTE: your **DestinationFiles** path will be different because you will have a different GUID
+
+run **dotnet build** in CodeFirstFusionExample solution folder (dll should now get copied into the unpacked-solution/PluginAssemblies folder structure of the unpacked solution )
+
+# BACKUP
 
 **pac solution add-reference** (to plugin)
 
