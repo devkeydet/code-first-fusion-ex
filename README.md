@@ -9,7 +9,7 @@ Elements autored in the service (make.powerapps.com):
 
 [TODO: Document more detailed repro steps to build from scratch using pac.]
 
-# SETUP
+# INTIAL SETUP WITH PLUGIN/CUSTOM API
 At a high level, the proces was...
 
 update gitignore to ensure we don't commit files we don't want in the repo
@@ -84,3 +84,17 @@ Export/Unpack metadata from changes made in make.powerapps.com
 ```
 
 run **dotnet build** in CodeFirstFusionExample solution folder (sanity check)
+
+# ADD PCF COMPONENT
+
+create folders: src/solutions/CodeFirstFusionExample/pcf-components
+
+Within pcf-components folder, run **pac pcf init -n DynamicTextInput -ns CodeFirstFusionExample -t field**
+
+If you get an error during **npm install**, run **npm install** again
+
+implement component
+
+test component locally
+
+**pac pcf push** t 
