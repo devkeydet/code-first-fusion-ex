@@ -2,17 +2,15 @@
 Example of starting with pac cli, then incorporating things that only happen in the service / solution.
 
 Code first elements include:
-* PCF Component
 * .NET Plugin
 
-Elements autored in the service:
-* Table
-* Model-driven app
+Elements autored in the service (make.powerapps.com):
 * Custom API
 
 [TODO: Document more detailed repro steps to build from scratch using pac.]
 
-# At a high level, the proces was:
+# SETUP
+At a high level, the proces was...
 
 update gitignore to ensure we don't commit files we don't want in the repo
 ```
@@ -84,22 +82,5 @@ Export/Unpack metadata from changes made in make.powerapps.com
 ```
 . .\export-unpack.ps1
 ```
-# BACKUP
 
-**pac solution add-reference** (to plugin)
-
-author plugin in VSCode
-
-run **dotnet build** in plugin folder
-
-deploy plugin with plugin registration tool
-
-manually add plugin assembly to imported solution
-
-**pac solution unpack** (to get plugin metadata)
-
-use plugin registration tool to register messages
-
-pac solution export
-
-pac solution unpack (to get message metadata back in unpacked format)
+run **dotnet build** in CodeFirstFusionExample solution folder (sanity check)
