@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_dkdt_codefirstpcftest" />
+  <EntityRelationship Name="lk_dkdt_codefirstpcftest_createdby" />
+  <EntityRelationship Name="lk_dkdt_codefirstpcftest_modifiedby" />
+  <EntityRelationship Name="owner_dkdt_codefirstpcftest" />
+  <EntityRelationship Name="team_dkdt_codefirstpcftest" />
+  <EntityRelationship Name="user_dkdt_codefirstpcftest" />
+</EntityRelationships>
