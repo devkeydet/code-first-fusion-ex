@@ -29,7 +29,11 @@ create folders: src/solutions/CodeFirstFusionExample
 
 **pac solution init** in the CodeFirstFusionExample solution folder
 
-edit CodeFirstFusionExample.cdsproj & enable SolutionPackageType to Both
+rename 'src' subdirectory to 'unpacked-solution' (preference for clarity)
+
+edit CodeFirstFusionExample.cdsproj: replace 'src' text in SolutionRootPath element to 'unpacked-solution'
+
+edit CodeFirstFusionExample.cdsproj: enable SolutionPackageType to Both
 
 **dotnet build** in the CodeFirstFusionExample solution folder
 
@@ -47,11 +51,21 @@ deploy plugin with plugin registration tool
 
 add plugin assembly to unmanaged solution in make.powerapps.com
 
+in powershell set:
+```
+$solutionName = "CodeFirstFusionExample"
+```
+
+Export/Unpack metadata from changes made in make.powerapps.com
+```
+. .\export-unpack.ps1
+```
+
 **pac solution add-reference** (to plugin)
 
 author plugin in VSCode
 
-run **dotnet build** in plugin fulder
+run **dotnet build** in plugin folder
 
 deploy plugin with plugin registration tool
 
