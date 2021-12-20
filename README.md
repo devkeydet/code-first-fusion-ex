@@ -78,6 +78,12 @@ NOTE: your **DestinationFiles** path will be different because you will have a d
 
 run **dotnet build** in CodeFirstFusionExample solution folder (dll should now get copied into the unpacked-solution/PluginAssemblies folder structure of the unpacked solution )
 
+Added custom api to unmanaged solution using make.powerapps.com to expose plugin logic
+
+Export/Unpack metadata from changes made in make.powerapps.com
+```
+. .\export-unpack.ps1
+```
 # BACKUP
 
 **pac solution add-reference** (to plugin)

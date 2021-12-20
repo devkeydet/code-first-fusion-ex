@@ -1,0 +1,8 @@
+<customapiresponseproperty uniquename="EcoOutput">
+  <displayname default="Echo-Out-EcoOutput">
+    <label description="Echo-Out-EcoOutput" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <name>Echo-Out-EcoOutput</name>
+  <type>10</type>
+</customapiresponseproperty>

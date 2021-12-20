@@ -1,0 +1,18 @@
+<customapi uniquename="dkdt_Echo">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Echo">
+    <label description="Echo" languagecode="1033" />
+  </description>
+  <displayname default="Echo">
+    <label description="Echo" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Echo</name>
+  <plugintypeid>
+    <plugintypeid>24eab4f0-f141-4953-921f-08f3e7407d56</plugintypeid>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>
