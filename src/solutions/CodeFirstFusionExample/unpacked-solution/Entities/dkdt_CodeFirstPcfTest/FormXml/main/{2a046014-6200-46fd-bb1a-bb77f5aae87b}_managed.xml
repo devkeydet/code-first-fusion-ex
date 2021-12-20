@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2a046014-6200-46fd-bb1a-bb77f5aae87b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{5c692d54-48e8-4ba9-b103-38b9c3e0136a}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{c032b220-7d62-4eaa-b8ec-7805d50e8885}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{693b4531-5869-4efd-8eaf-0f71d9874b40}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="dkdt_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dkdt_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{52cd6b14-2626-b28b-c2ad-d0956652dba9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="dkdt_description" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="dkdt_description" disabled="false" uniqueid="{63314e96-b1bb-64c9-8cd3-316d17a60d4e}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{be005007-1007-464d-a7f1-64b7038358ca}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{63314e96-b1bb-64c9-8cd3-316d17a60d4e}">
+          <customControl id="{E0DECE4B-6FC8-4a8f-A065-082708572369}">
+            <parameters>
+              <datafieldname>dkdt_description</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="dkdt_CodeFirstFusionExample.DynamicTextInput">
+            <parameters>
+              <TextValue>dkdt_description</TextValue>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="dkdt_CodeFirstFusionExample.DynamicTextInput">
+            <parameters>
+              <TextValue>dkdt_description</TextValue>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="dkdt_CodeFirstFusionExample.DynamicTextInput">
+            <parameters>
+              <TextValue>dkdt_description</TextValue>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

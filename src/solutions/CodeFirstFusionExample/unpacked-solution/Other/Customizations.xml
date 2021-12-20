@@ -11,6 +11,8 @@
   <optionsets />
   <CustomControls />
   <SolutionPluginAssemblies />
+  <AppModuleSiteMaps />
+  <AppModules />
   <EntityDataProviders />
   <Languages>
     <Language>1033</Language>

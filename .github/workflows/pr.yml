@@ -17,12 +17,14 @@ jobs:
       - name: build
         shell: pwsh
         run: |          
-          $currentDirectory = Get-Location
-          
+          $currentDirectory = Get-Location          
+          $pcfDirectory = "$env:solution_src_root/pcf-components"
+          cd $pcfDirectory
+          npm install
+          cd $currentDirectory          
           echo 'Building cdsproj for solution...'
           cd $env:solution_src_root
           dotnet build -c Release
-
           cd $currentDirectory
       
       - name: upload-artifact
