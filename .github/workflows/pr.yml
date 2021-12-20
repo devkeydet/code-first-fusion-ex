@@ -18,7 +18,7 @@ jobs:
         shell: pwsh
         run: |          
           $currentDirectory = Get-Location          
-          $componentFolders = $env:solution_src_root/pcf-components
+          $componentFolders = "$env:solution_src_root/pcf-components"
           cd $componentFolders
           npm install
           cd $currentDirectory          
