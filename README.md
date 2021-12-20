@@ -3,9 +3,11 @@ Example of starting with pac cli, then incorporating things that only happen in 
 
 Code first elements include:
 * .NET Plugin
+* PCF Component
 
 Elements autored in the service (make.powerapps.com):
 * Custom API
+* Table/Form/MDA
 
 [TODO: Document more detailed repro steps to build from scratch using pac.]
 
