@@ -1,5 +1,5 @@
 # Power Platform CLI (pac) Code First / Fusion Test
-Example of starting with pac cli, then incorporating things that only happen in the service / solution.
+Example of starting with an empty repo, using **pac** cli to start, and incorporating things that only happen in the service / solution. My goal was to start from scratch, perform as much **code first** as possible, use **pac** unless there is no pac capability to do something, and do things in make.powerapps.com only when necessary.  
 
 Code first elements include:
 * .NET Plugin
