@@ -89,12 +89,19 @@ run **dotnet build** in CodeFirstFusionExample solution folder (sanity check)
 
 create folders: src/solutions/CodeFirstFusionExample/pcf-components
 
-Within pcf-components folder, run **pac pcf init -n DynamicTextInput -ns CodeFirstFusionExample -t field**
+within pcf-components folder, run **pac pcf init -n DynamicTextInput -ns CodeFirstFusionExample -t field**
 
-If you get an error during **npm install**, run **npm install** again
+if you get an error during **npm install**, run **npm install** again
 
 implement component
 
 test component locally
+
+**pac solution add-reference -p pcf-components** in CodeFirstFusionExample solution folder
+
+**pac solution import** of the unmanaged zip file in the bin/debug folder
+
+using make.powerapps.com, create table CodeFirstPcfTest, create model-driven app, add table to mda, add component to main form in mda
+
 
 **pac pcf push** t 

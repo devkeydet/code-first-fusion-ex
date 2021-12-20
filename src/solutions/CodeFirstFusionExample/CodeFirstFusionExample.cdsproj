@@ -45,14 +45,13 @@
   
   <ItemGroup>
     <ProjectReference Include="plugins\CodeFirstFusionExample.Plugins\CodeFirstFusionExample.Plugins.csproj" />
+    <ProjectReference Include="pcf-components\pcf-components.pcfproj" />
   </ItemGroup>  
 
   <!-- Manually added to ensure plugin dll gets copied before solution pack -->
   <Target Name="CopyPluginAssemblies" AfterTargets="ResolveReferences">
-    <Message Text="Copying plugin assemblies..." Importance="high"/>
-    <Copy
-      SourceFiles="plugins\CodeFirstFusionExample.Plugins\bin\$(Configuration)\$(TargetFramework)\CodeFirstFusionExample.Plugins.dll"
-      DestinationFiles="unpacked-solution\PluginAssemblies\CodeFirstFusionExamplePlugins-9732BB82-293C-440C-ADE7-306240D9AAD5\CodeFirstFusionExamplePlugins.dll" />
+    <Message Text="Copying plugin assemblies..." Importance="high" />
+    <Copy SourceFiles="plugins\CodeFirstFusionExample.Plugins\bin\$(Configuration)\$(TargetFramework)\CodeFirstFusionExample.Plugins.dll" DestinationFiles="unpacked-solution\PluginAssemblies\CodeFirstFusionExamplePlugins-9732BB82-293C-440C-ADE7-306240D9AAD5\CodeFirstFusionExamplePlugins.dll" />
       <!-- Note that Dataverse doesn't support dll names with '.' in them.  Therefore, destination dll has the '.'' removed -->
   </Target>
 
