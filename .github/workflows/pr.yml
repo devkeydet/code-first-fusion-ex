@@ -18,8 +18,8 @@ jobs:
         shell: pwsh
         run: |          
           $currentDirectory = Get-Location          
-          $componentFolders = "$env:solution_src_root/pcf-components"
-          cd $componentFolders
+          $pcfDirectory = "$env:solution_src_root/pcf-components"
+          cd $pcfDirectory
           npm install
           cd $currentDirectory          
           echo 'Building cdsproj for solution...'
