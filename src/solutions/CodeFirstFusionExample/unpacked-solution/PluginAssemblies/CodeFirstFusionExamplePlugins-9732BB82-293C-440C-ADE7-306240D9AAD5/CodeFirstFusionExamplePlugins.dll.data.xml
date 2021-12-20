@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="CodeFirstFusionExample.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=eff3cce3b2280133" PluginAssemblyId="9732bb82-293c-440c-ade7-306240d9aad5" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/CodeFirstFusionExamplePlugins-9732BB82-293C-440C-ADE7-306240D9AAD5/CodeFirstFusionExamplePlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="CodeFirstFusionExample.Plugins.Echo, CodeFirstFusionExample.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=eff3cce3b2280133" PluginTypeId="24eab4f0-f141-4953-921f-08f3e7407d56" Name="CodeFirstFusionExample.Plugins.Echo">
+      <FriendlyName>cc7084eb-2e4c-43d6-919f-b21c81bc5a19</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>
