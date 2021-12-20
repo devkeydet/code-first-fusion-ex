@@ -103,5 +103,7 @@ test component locally
 
 using make.powerapps.com, create table CodeFirstPcfTest, create model-driven app, add table to mda, add component to main form in mda
 
-
-**pac pcf push** t 
+Export/Unpack metadata from changes made in make.powerapps.com
+```
+. .\export-unpack.ps1
+```
