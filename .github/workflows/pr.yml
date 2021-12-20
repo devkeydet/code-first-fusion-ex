@@ -19,6 +19,7 @@ jobs:
         run: |          
           $currentDirectory = Get-Location          
           $componentFolders = Get-ChildItem $env:solution_src_root/pcf-components
+          cd $componentFolders
           npm install
           cd $currentDirectory          
           echo 'Building cdsproj for solution...'
