@@ -1,0 +1,15 @@
+{
+  "components": [
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "dkdt_CodeFirstFusionExample.DynamicTextInput",
+      "IdentifierType": 0
+    }
+  ],
+  "instanceUrl": "https://jonis-dev.crm.dynamics.com/",
+  "state": "Configured",
+  "webApiVersion": "v9.0"
+}

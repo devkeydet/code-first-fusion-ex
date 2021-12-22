@@ -1,0 +1,11 @@
+Screen1 As screen:
+
+    "DynamicTextInput1 As 'Dynamic Text Input cf'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =97
+        TextValue: =
+        Width: =200
+        X: =0
+        Y: =0
+        ZIndex: =1
+
