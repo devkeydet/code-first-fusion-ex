@@ -85,6 +85,7 @@
       <RootComponent type="66" schemaName="dkdt_CodeFirstFusionExample.DynamicTextInput" behavior="0" />
       <RootComponent type="80" schemaName="dkdt_CodeFirstPcfTestMda" behavior="0" />
       <RootComponent type="91" id="{9732bb82-293c-440c-ade7-306240d9aad5}" schemaName="CodeFirstFusionExample.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=eff3cce3b2280133" behavior="0" />
+      <RootComponent type="300" schemaName="dkdt_codefirstpcfcanvas_adfd3" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>

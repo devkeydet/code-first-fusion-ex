@@ -11,10 +11,29 @@ env:
 
 jobs:
   pr:
-    runs-on: ubuntu-latest 
+    runs-on: windows-latest 
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: install-and-cache-powershell-modules
+        id: psmodulecache
+        uses: potatoqualitee/psmodulecache@v4
+        with:
+          modules-to-cache: Microsoft.Xrm.Data.PowerShell
+          shell: powershell
+
+      - name: set-environment-settings
+        shell: powershell
+        run: |          
+          Import-Module Microsoft.Xrm.Data.PowerShell
+
+          Connect-CrmOnline -ServerUrl ${{ secrets.ENVIRONMENT_URL }} -OAuthClientId ${{ secrets.CLIENT_ID }} -ClientSecret ${{ secrets.CLIENT_SECRET }}
+          # Need to turn on Environment setting to enable PCF for Canvas
+
+          $updateFields = @{}
+          $updateFields.Add("IsCustomControlsInCanvasAppsEnabled".ToLower(), $true)
+          Set-CrmRecord -conn $conn -EntityLogicalName organization -Id (Invoke-CrmWhoAmI).OrganizationId -Fields $updateFields
 
       - name: build
         shell: pwsh
