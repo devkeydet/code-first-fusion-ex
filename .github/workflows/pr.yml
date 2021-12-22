@@ -35,32 +35,32 @@ jobs:
           $updateFields.Add("IsCustomControlsInCanvasAppsEnabled".ToLower(), $true)
           Set-CrmRecord -conn $conn -EntityLogicalName organization -Id (Invoke-CrmWhoAmI).OrganizationId -Fields $updateFields
 
-      # - name: build
-      #   shell: pwsh
-      #   run: |          
-      #     $currentDirectory = Get-Location          
-      #     $pcfDirectory = "$env:solution_src_root/pcf-components"
-      #     cd $pcfDirectory
-      #     npm install
-      #     cd $currentDirectory          
-      #     echo 'Building cdsproj for solution...'
-      #     cd $env:solution_src_root
-      #     dotnet build -c Release
-      #     cd $currentDirectory
+      - name: build
+        shell: pwsh
+        run: |          
+          $currentDirectory = Get-Location          
+          $pcfDirectory = "$env:solution_src_root/pcf-components"
+          cd $pcfDirectory
+          npm install
+          cd $currentDirectory          
+          echo 'Building cdsproj for solution...'
+          cd $env:solution_src_root
+          dotnet build -c Release
+          cd $currentDirectory
       
-      # - name: upload-artifact
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: artifact
-      #     path: ${{ env.solution_src_root }}/bin/Release      
+      - name: upload-artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: ${{ env.solution_src_root }}/bin/Release      
       
-      # - name: import-solution
-      #   uses: microsoft/powerplatform-actions/import-solution@0.4.3
-      #   with:
-      #     environment-url: ${{ secrets.ENVIRONMENT_URL }}
-      #     tenant-id: ${{ secrets.TENANT_ID }}
-      #     app-id: ${{ secrets.CLIENT_ID }}
-      #     client-secret: ${{ secrets.CLIENT_SECRET }}
-      #     solution-file: ${{ env.solution_src_root }}/bin/Release/${{ env.solution_name }}_managed.zip 
-      #     force-overwrite: true
-      #     run-asynchronously: true
+      - name: import-solution
+        uses: microsoft/powerplatform-actions/import-solution@0.4.3
+        with:
+          environment-url: ${{ secrets.ENVIRONMENT_URL }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          app-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          solution-file: ${{ env.solution_src_root }}/bin/Release/${{ env.solution_name }}_managed.zip 
+          force-overwrite: true
+          run-asynchronously: true
