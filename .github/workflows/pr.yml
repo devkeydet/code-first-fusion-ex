@@ -26,11 +26,11 @@ jobs:
       - name: set-environment-settings
         shell: powershell
         run: |          
-          Import-Module Xrm.Data.PowerShell
+          Import-Module Microsoft.Xrm.Data.PowerShell
 
           Connect-CrmOnline -ServerUrl ${{ secrets.ENVIRONMENT_URL }} -OAuthClientId ${{ secrets.CLIENT_ID }} -ClientSecret ${{ secrets.CLIENT_SECRET }}
           # Need to turn on Environment setting to enable PCF for Canvas
-          
+
           $updateFields.Add("IsCustomControlsInCanvasAppsEnabled".ToLower(), $true)
           Set-CrmRecord -conn $conn -EntityLogicalName organization -Id (Invoke-CrmWhoAmI).OrganizationId -Fields $updateFields
 
