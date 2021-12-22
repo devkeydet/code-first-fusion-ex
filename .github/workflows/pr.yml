@@ -31,6 +31,7 @@ jobs:
           Connect-CrmOnline -ServerUrl ${{ secrets.ENVIRONMENT_URL }} -OAuthClientId ${{ secrets.CLIENT_ID }} -ClientSecret ${{ secrets.CLIENT_SECRET }}
           # Need to turn on Environment setting to enable PCF for Canvas
 
+          $updateFields = @{}
           $updateFields.Add("IsCustomControlsInCanvasAppsEnabled".ToLower(), $true)
           Set-CrmRecord -conn $conn -EntityLogicalName organization -Id (Invoke-CrmWhoAmI).OrganizationId -Fields $updateFields
 
